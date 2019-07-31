@@ -23,6 +23,15 @@ good_urls = [
         account_key='deadbeef',
         container='1bucket1',
         max_connections=5)),
+    (u'azure://MYACCOUNT:deadbeef@1bucket1?max_connections=5&socket_timeout=(20,100)&use_sas=True', dict(
+        type='azure',
+        account_name='MYACCOUNT',
+        account_key='deadbeef',
+        container='1bucket1',
+        max_connections=5,
+        socket_timeout=(20,100),
+        use_sas=True
+     )),
     (u'fs://this/is/a/relative/path', dict(type='fs', path='this/is/a/relative/path')),
     (u'fs:///an/absolute/path', dict(type=u'fs', path=u'/an/absolute/path')),
     (u's3://access_key:secret_key@endpoint:1234/bucketname', dict(
